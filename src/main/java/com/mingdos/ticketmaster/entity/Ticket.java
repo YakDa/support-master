@@ -1,0 +1,41 @@
+package com.mingdos.ticketmaster.entity;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+public class Ticket {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank
+    private String deviceId;
+
+    @NotBlank
+    private String customerId;
+
+    @NotBlank
+    @Size(max = 500)
+    private String issue;
+
+    @Enumerated(EnumType.STRING)
+    private Priority priority;
+
+    @Enumerated(EnumType.STRING)
+    private TicketStatus ticketStatus;
+
+    private String assignedAgentId;
+
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    private LocalDateTime resolvedAt;
+
+    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
+    private List<DiagnosticLog> diagnosticLogs = new ArrayList<>();
+}
