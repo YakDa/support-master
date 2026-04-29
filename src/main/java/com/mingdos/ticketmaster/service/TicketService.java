@@ -66,10 +66,8 @@ public class TicketService {
     }
 
     public DiagnosticLog addDiagnostic(Long ticketId, DiagnosticLogRequest request) {
-        Ticket ticket = getTicket(ticketId);
-
         DiagnosticLog log = new DiagnosticLog();
-        log.setTicket(ticket);
+        log.setTicketId(ticketId);
         log.setStep(request.getStep());
         log.setResult(request.getResult());
         log.setPerformedBy(request.getPerformedBy());

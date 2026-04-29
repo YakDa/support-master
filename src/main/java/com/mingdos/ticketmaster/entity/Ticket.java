@@ -42,6 +42,6 @@ public class Ticket {
 
     private LocalDateTime resolvedAt;
 
-    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "ticketId", cascade = CascadeType.ALL)
     private List<DiagnosticLog> diagnosticLogs = new ArrayList<>();
 }

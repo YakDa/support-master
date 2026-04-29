@@ -17,9 +17,7 @@ public class DiagnosticLog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "ticket_id")
-    private Ticket ticket;
+    private long ticketId;
 
     @NotBlank
     private String step;
