@@ -5,6 +5,7 @@ import com.mingdos.ticketmaster.dto.TicketRequest;
 import com.mingdos.ticketmaster.entity.DiagnosticLog;
 import com.mingdos.ticketmaster.entity.Ticket;
 import com.mingdos.ticketmaster.entity.TicketStatus;
+import com.mingdos.ticketmaster.exception.NotFoundException;
 import com.mingdos.ticketmaster.repository.DiagnosticLogRepository;
 import com.mingdos.ticketmaster.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
