@@ -1,20 +1,17 @@
 package com.mingdos.ticketmaster.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-public class DiagnosticLogRequest {
-    @NotBlank
-    private String step;
+public record DiagnosticLogRequest(
 
-    @NotBlank
-    private String result;
+        @NotBlank
+        String step,
 
-    @NotBlank
-    private String performedBy;
+        @NotBlank
+        String result,
+
+        @NotBlank
+        String performedBy
+
+) {
 }

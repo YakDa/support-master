@@ -25,10 +25,10 @@ public class TicketService {
 
     public Ticket createTicket(TicketRequest request) {
         Ticket ticket = new Ticket();
-        ticket.setDeviceId(request.getDeviceId());
-        ticket.setCustomerId(request.getCustomerId());
-        ticket.setIssue(request.getIssue());
-        ticket.setPriority(request.getPriority());
+        ticket.setDeviceId(request.deviceId());
+        ticket.setCustomerId(request.customerId());
+        ticket.setIssue(request.issue());
+        ticket.setPriority(request.priority());
         ticket.setTicketStatus(TicketStatus.OPEN);
         return ticketRepository.save(ticket);
     }
@@ -68,9 +68,9 @@ public class TicketService {
     public DiagnosticLog addDiagnostic(Long ticketId, DiagnosticLogRequest request) {
         DiagnosticLog log = new DiagnosticLog();
         log.setTicketId(ticketId);
-        log.setStep(request.getStep());
-        log.setResult(request.getResult());
-        log.setPerformedBy(request.getPerformedBy());
+        log.setStep(request.step());
+        log.setResult(request.result());
+        log.setPerformedBy(request.performedBy());
         log.setTimestamp(LocalDateTime.now());
 
         return diagnosticLogRepository.save(log);
