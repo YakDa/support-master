@@ -1,5 +1,7 @@
 package com.mingdos.ticketmaster.service;
 
+import com.mingdos.ticketmaster.dto.DiagnosticLogRequest;
+import com.mingdos.ticketmaster.dto.TicketRequest;
 import com.mingdos.ticketmaster.entity.DiagnosticLog;
 import com.mingdos.ticketmaster.entity.Ticket;
 import com.mingdos.ticketmaster.entity.TicketStatus;
